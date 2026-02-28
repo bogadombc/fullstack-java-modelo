@@ -7,6 +7,10 @@ Sistema simplificado para gerenciamento de autuação de veículos
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
+### preview
+
+> _Adicione aqui uma captura de tela do projeto (ex: `![Screenshot](assets/screenshot.png)`)_
+
 ### tecnologias
 - backend: java 25 e spring boot 4.0.3
 - frontend: html / css-tailwind / javascript / node-typescript
