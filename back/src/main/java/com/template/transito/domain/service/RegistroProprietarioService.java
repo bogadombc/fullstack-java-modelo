@@ -1,12 +1,13 @@
 package com.template.transito.domain.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.template.transito.domain.exception.NegocioException;
 import com.template.transito.domain.model.Proprietario;
 import com.template.transito.domain.repository.ProprietarioRepository;
 
-import jakarta.transaction.Transactional;
+
 import lombok.AllArgsConstructor;
 
 @Service

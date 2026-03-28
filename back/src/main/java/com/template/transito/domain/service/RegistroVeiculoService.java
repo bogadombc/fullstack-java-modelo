@@ -1,16 +1,18 @@
 package com.template.transito.domain.service;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.template.transito.domain.exception.EntidadeNaoEncontradaException;
 import com.template.transito.domain.exception.NegocioException;
 import com.template.transito.domain.model.Proprietario;
 import com.template.transito.domain.model.StatusVeiculo;
 import com.template.transito.domain.model.Veiculo;
 import com.template.transito.domain.repository.VeiculoRepository;
 
-import jakarta.transaction.Transactional;
+
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -19,6 +21,12 @@ public class RegistroVeiculoService {
 
   private final VeiculoRepository veiculoRepository;
   private final RegistroProprietarioService registroProprietarioService;
+
+
+  public Veiculo buscarPorId(Long veiculoId) {
+    return veiculoRepository.findById(veiculoId)
+      .orElseThrow(() -> new EntidadeNaoEncontradaException("Veículo não encontrado"));
+  }
 
   @Transactional
   public Veiculo cadastrar(Veiculo novoVeiculo) {
@@ -39,7 +47,7 @@ public class RegistroVeiculoService {
 
     novoVeiculo.setProprietario(proprietario);
     novoVeiculo.setStatus(StatusVeiculo.REGULAR);
-    novoVeiculo.setDataCadastro(LocalDateTime.now());
+    novoVeiculo.setDataCadastro(OffsetDateTime.now());
     
     return veiculoRepository.save(novoVeiculo);
   }
