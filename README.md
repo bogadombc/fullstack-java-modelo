@@ -5,8 +5,25 @@ Sistema fullstack simplificado para gerenciamento de autuação de veículos
 
 ### tecnologias
 - backend: java 25 e spring boot 4.0.3
-- frontend: html / css-tailwind / javascript / node-typescript
+- frontend: html / tailwind css v4 / typescript / vite
 - Banco de dados: MySQL com FlyWay (ferramenta de migracão de banco de dados que gerencia alterações no esquema /estrutura de bancos relacionais de forma versionada e controlada)
+
+### como executar
+
+#### backend (`back/`)
+
+```bash
+./mvnw spring-boot:run
+```
+
+#### frontend (`front/`)
+
+```bash
+npm install
+npm run dev
+```
+
+O frontend usa proxy `/api` no Vite para conversar com o backend em `http://localhost:8080`.
 
 ### diagrama de classes
 ![Diagrama de Classes](diagrama-classes-api-modelo.png)
